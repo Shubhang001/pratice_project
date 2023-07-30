@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practice/search_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,12 +10,6 @@ class HomeScreen extends StatelessWidget {
       "https://www.arkasoftwares.com/blog/wp-content/uploads/2022/03/Grocery-Delivery-Mobile-App-Development.jpg",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnD2gqUCg9C0Ek3W_Q4518PJUYpOURS1wjDuDMdXuHdWYREjlht1NwyChW0EJv0Lk8cy8",
       "https://media.istockphoto.com/id/1479952169/vector/vector-online-grocery-store-banner-template-fresh-products-on-green-background-horizontal.jpg?s=1024x1024&w=is&k=20&c=jsqc3QtmvBWhc68v2g83vRM2ttc8AWNkDuEymsvlZtc=",
-    ];
-
-    List<String> images1 = [
-      "https://media.istockphoto.com/id/173242750/photo/banana-bunch.jpg?s=612x612&w=0&k=20&c=MAc8AXVz5KxwWeEmh75WwH6j_HouRczBFAhulLAtRUU=",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe9beuq52MMhJ77Du9c-g6aXgKlnnNNKzgsA",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEJKsP8A5-wRAFOFxOPY9qvZcEjrEIBSl-uA",
     ];
 
     return SafeArea(
@@ -44,7 +39,7 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          const SearchBar(),
+          const Searchbar(),
           SizedBox(
             height: 150,
             width: 250,
@@ -58,7 +53,7 @@ class HomeScreen extends StatelessWidget {
                 }),
           ),
           const Padding(
-            padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 0.0),
+            padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 12.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -79,50 +74,54 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          /*SafeArea(
-            child: ListView(scrollDirection: Axis.horizontal, 
-            children: [
-              Card(
-                
-                child: ListTile(
-                    leading: Image.network(images1[0]),
-                    title: const Text("Organic Bananas"),
-                    subtitle: const Text('7pcs,Price'),
-                    trailing: const Text("\$${4.99}",
-                        textScaleFactor: 1.5,
-                        style: TextStyle(
-                          color: Colors.deepPurple,
-                          fontWeight: FontWeight.bold,
-                        ))),
-              ),
-              Card(
-                child: ListTile(
-                    leading: Image.network(images1[0]),
-                    title: const Text("Organic Bananas"),
-                    subtitle: const Text('7pcs,Price'),
-                    trailing: const Text("\$${4.99}",
-                        textScaleFactor: 1.5,
-                        style: TextStyle(
-                          color: Colors.deepPurple,
-                          fontWeight: FontWeight.bold,
-                        ))),
-              ),
-              Card(
-                child: ListTile(
-                    leading: Image.network(images1[0]),
-                    title: const Text("Organic Bananas"),
-                    subtitle: const Text('7pcs,Price'),
-                    trailing: const Text("\$${4.99}",
-                        textScaleFactor: 1.5,
-                        style: TextStyle(
-                          color: Colors.deepPurple,
-                          fontWeight: FontWeight.bold,
-                        ))),
-              ),)),*/
-          Card(
-              child: GridTile(
-            child: Image.asset("assets/images/bananas.jpg"),
-          ))
+          SizedBox(
+            height: 240.0,
+            width: 250.0,
+            child: ListView.builder(
+              itemCount: 1,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return Row(children: [
+                  Card(
+                    margin: const EdgeInsets.fromLTRB(16.0, 8.0, 1.0, 12.0),
+                    child: Container(
+                      padding:
+                          const EdgeInsets.fromLTRB(10.0, 12.0, 10.0, 10.0),
+                      decoration:
+                          BoxDecoration(borderRadius: BorderRadius.circular(8)),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                              height: 100.0,
+                              width: 135.0,
+                              child: Image.asset("assets/images/bananas.jpg")),
+                          const SizedBox(height: 3.0),
+                          const Text(
+                            "Organic Bananas",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 16.0),
+                          ),
+                          const Text(
+                            '7pcs,Price',
+                            style: TextStyle(color: Colors.grey),
+                          ),
+                          FloatingActionButton(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20.0)),
+                            onPressed: () {},
+                            child: const Icon(
+                              Icons.add,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ]);
+              },
+            ),
+          )
         ],
       ),
     );

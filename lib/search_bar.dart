@@ -5,17 +5,15 @@ class Searchbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 16.0),
+    return const Padding(
+      padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 16.0),
       child: Row(
         children: [
           Expanded(
             child: SizedBox(
               height: 50.0,
               child: TextField(
-                onChanged: (value) {},
-                decoration: const InputDecoration(
-                    fillColor: Colors.grey,
+                decoration: InputDecoration(
                     labelText: "Search Store",
                     hintText: "Seach",
                     prefixIcon: Icon(Icons.search),
