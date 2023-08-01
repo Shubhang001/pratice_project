@@ -1,25 +1,17 @@
 import 'package:flutter/material.dart';
 
 class Firstrow extends StatelessWidget {
-  const Firstrow({super.key});
+  const Firstrow({super.key, required this.image1, required this.text1});
+  final List<String> image1;
+  final List<String> text1;
 
   @override
   Widget build(BuildContext context) {
-    List<String> image1 = [
-      "https://img.freepik.com/premium-photo/fresh-banana-fruit-isolated-white-background-banana-clipping-path-fresh-organic-banana_299651-2182.jpg?w=740",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdDd-5BsRWcq6Gjt5Qql37XjR-oYJ9mMFaGA",
-      "https://img.freepik.com/premium-photo/pineapple-isolated-white-background_88281-13.jpg",
-    ];
-    List<String> text1 = [
-      "Organic Bananas",
-      "Red Apples",
-      "Pineapples",
-    ];
     return SizedBox(
       height: 275.0,
       width: 280.0,
       child: ListView.builder(
-        itemCount: 3,
+        itemCount: text1.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return Row(children: [
