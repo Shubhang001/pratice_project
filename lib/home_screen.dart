@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practice/First_row.dart';
 import 'package:practice/search_bar.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -74,54 +75,7 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
-            height: 240.0,
-            width: 250.0,
-            child: ListView.builder(
-              itemCount: 1,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                return Row(children: [
-                  Card(
-                    margin: const EdgeInsets.fromLTRB(16.0, 8.0, 1.0, 12.0),
-                    child: Container(
-                      padding:
-                          const EdgeInsets.fromLTRB(10.0, 12.0, 10.0, 10.0),
-                      decoration:
-                          BoxDecoration(borderRadius: BorderRadius.circular(8)),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                              height: 100.0,
-                              width: 135.0,
-                              child: Image.asset("assets/images/bananas.jpg")),
-                          const SizedBox(height: 3.0),
-                          const Text(
-                            "Organic Bananas",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 16.0),
-                          ),
-                          const Text(
-                            '7pcs,Price',
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                          FloatingActionButton(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20.0)),
-                            onPressed: () {},
-                            child: const Icon(
-                              Icons.add,
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                ]);
-              },
-            ),
-          )
+          const Firstrow(),
         ],
       ),
     );
