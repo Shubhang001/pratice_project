@@ -30,6 +30,9 @@ class MainData extends State<StatefulWidget> {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          brightness: Brightness.light,
+        ),
         home: Scaffold(
           body: pages1[currentIndex],
           bottomNavigationBar: BottomNavigationBar(
